@@ -36,6 +36,19 @@ test_size = 0.3
 
 ## **Result testing by k-fold cross-validation**
 
+```
+kfold = KFold(n_splits=10, shuffle=True, random_state=42)
+scores = cross_val_score(pipeline, X, y, cv=kfold, scoring='r2')
+mean_score = scores.mean()
+std_score = scores.std()
+
+# Calculate the average error of the R2 scores
+avg_error = std_score / np.sqrt(kfold.n_splits)
+
+# Print the mean and average error of the R2 scores
+print(f'R2: {mean_score:.2f} +/- {avg_error:.2f}')
+```
+
 ![K fold](./assets/k-fold.png)
 
 ## **Download model**
