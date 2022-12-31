@@ -35,9 +35,8 @@ Result in higher correlation (0.4) from .39 and .27
 ## **Selected Features**
 
 ```
-
-X = df1[['sqft_living_mul', 'house_grade', 'bathrooms', 'environment', 'sqft_basement', 'bedrooms', 'lat']] y = df1['price']
-
+X = df1[['sqft_living_mul', 'house_grade', 'bathrooms', 'environment', 'sqft_basement', 'bedrooms', 'lat']] 
+y = df1['price']
 ```
 
 ## **Pipeline**
@@ -56,13 +55,14 @@ pipeline = Pipeline([
 ## **Result testing by k-fold cross-validation**
 
 ```
-
-kfold = KFold(n_splits=10, shuffle=True, random_state=42) scores = cross_val_score(pipeline, X, y, cv=kfold, scoring='r2') mean_score = scores.mean() std_score = scores.std()
+kfold = KFold(n_splits=10, shuffle=True, random_state=42) 
+scores = cross_val_score(pipeline, X, y, cv=kfold, scoring='r2') 
+mean_score = scores.mean() 
+std_score = scores.std()
 
 avg_error = std_score / np.sqrt(kfold.n_splits)
 
 print(f'R2: {mean_score:.2f} +/- {avg_error:.2f}')
-
 ```
 
 ![K fold](./assets/k-fold.png)
