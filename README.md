@@ -1,3 +1,10 @@
+# Machine Learning Project - 4th year 2nd semester
+House Price Prediction using Machine Learning
+Objective
+The goal of this project is to predict the sale prices of houses using various machine learning techniques such as linear regression, polynomial regression, Lasso, and Ridge.
+
+Dataset
+The dataset used for this project consists of information about houses such as square footage, number of bedrooms, location and their sale prices. The dataset is collected from various sources and cleaned for missing values.
 ## **Data Visualization**
 
 ![Data Visualization](./assets/data_visualization.png)
